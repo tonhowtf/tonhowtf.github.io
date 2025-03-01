@@ -5,7 +5,7 @@ import { defineConfig } from 'astro/config'
 import vue from '@astrojs/vue';
 
 export default defineConfig({
-    site: 'https://tonhowtf.github.io',
+    site: 'https://tonhowtf.github.io/',
     integrations: [
     theme({
         site: {

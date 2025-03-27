@@ -1,14 +1,12 @@
 ---
 title: 'Games?'
-description: 'Lorem ipsum dolor sit amet'
+description: 'Apenas falando sobre jogos'
 pubDate: 'Feb 17 2025'
 ---
 
-*playtime was sourced via howlongtobeat.com*
+*playtime via howlongtobeat.com*
 
 ## Donut County
-
----
 
 | **Genre**     | Top-Down/Puzzle |
 |--------------|----------------|
@@ -19,11 +17,9 @@ pubDate: 'Feb 17 2025'
 | **Price**     | R$ 38.49 |
 | **Purchase**  | [Steam](https://store.steampowered.com/app/702670/Donut_County/) |
 
-Simply one of the most cozy games I've ever played. At times I got bored, but the story builds very well over time. It's a great game.
+Simplesmente um dos jogos mais aconchegantes que já joguei. Às vezes, eu ficava entediado, mas a história se desenvolve muito bem com o tempo. É um ótimo jogo.
 
 ## Unfinished Swan	
-
----
 
 | **Genre**     | Adventure |
 |--------------|----------------|
@@ -34,11 +30,9 @@ Simply one of the most cozy games I've ever played. At times I got bored, but th
 | **Price**     | R$ 43.99 |
 | **Purchase**  | [Steam](https://store.steampowered.com/app/1206430/The_Unfinished_Swan/) |
 
-An absurdly beautiful game Annapurna knows how to make good games. The beginning of the game is absurdly cool, it's innovative, but the second part starts to get a little boring and monotonous, but the third... The third is perfect. I would say it's a relaxing game, with fun puzzles.
+Um jogo absurdamente bonito A Annapurna sabe como fazer bons jogos. O início do jogo é absurdamente legal, é inovador, mas a segunda parte começa a ficar um pouco chata e monótona, mas a terceira... A terceira é perfeita. Eu diria que é um jogo relaxante, com quebra-cabeças divertidos.
 
 ## Her Story
-
----
 
 | **Genre**     | Point-and-Click/Simulation|
 |--------------|----------------|
@@ -51,8 +45,6 @@ An absurdly beautiful game Annapurna knows how to make good games. The beginning
 
 ## The Stanley Parable
 
----
-
 | **Genre**     | First-Person/Adventure |
 |--------------|----------------|
 | **Platforms** | Linux, Mac, Pc |
@@ -61,3 +53,6 @@ An absurdly beautiful game Annapurna knows how to make good games. The beginning
 | **Finished at** | 2025-02-x |
 | **Price**     | R$ 46.99 |
 | **Purchase**  | [Steam](https://store.steampowered.com/app/221910/) |
+
+
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ config.title }}</title>
+</head>
+<body>
+    <h1>{{ config.title }}</h1>
+    
+    <h2>Posts</h2>
+    {% for page in section.pages %}
+        <article>
+            <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
+            <p>{{ page.date }}</p>
+            {% if page.summary %}
+                <p>{{ page.summary }}</p>
+            {% endif %}
+        </article>
+    {% endfor %}
+</body>
+</html>

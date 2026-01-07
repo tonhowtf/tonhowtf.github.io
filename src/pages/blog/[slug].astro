@@ -28,12 +28,12 @@ const next = allPosts[index - 1];
 
 <BaseLayout title={post.data.title}>
   <article class={`post type-${post.data.type}`}>
-  <a href={import.meta.env.BASE_URL} class="back">
+  <a href="/" class="back">
     ← home
   </a>
     <header class="header">
       <img
-        src={`${import.meta.env.BASE_URL}${post.data.image}`}
+        src={`/${post.data.image}`}
         alt=""
         class="thumb"
         loading="lazy"
@@ -54,13 +54,13 @@ const next = allPosts[index - 1];
 
     <nav class="post-nav">
       {previous && (
-        <a class="prev" href={`${import.meta.env.BASE_URL}blog/${previous.slug}`}>
+        <a class="prev" href={`/blog/${previous.slug}`}>
           ← {previous.data.title}
         </a>
       )}
 
       {next && (
-        <a class="next" href={`${import.meta.env.BASE_URL}blog/${next.slug}`}>
+        <a class="next" href={`/blog/${next.slug}`}>
           {next.data.title} →
         </a>
       )}

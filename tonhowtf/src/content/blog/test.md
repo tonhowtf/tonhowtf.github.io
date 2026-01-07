@@ -1,8 +1,8 @@
 ---
 title: "Tonho"
-description: "Tonho"
+description: "Como programar sem cortar o cafezinho"
 date: 2026-07-02
-type: livro-programacao
+type: curso-pago
 label: Livro
 image: "/images/test.png"
 ---

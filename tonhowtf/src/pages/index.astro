@@ -8,28 +8,34 @@ const posts = await getCollection("blog");
 <BaseLayout title="tonho.wtf">
   <h1>tonho.wtf</h1>
 
-  <ul class="posts">
-    {posts.map((post) => (
-      <li class={`post type-${post.data.type}`}>
-        <img
-          src={post.data.image}
-          alt=""
-          class="thumb"
-          loading="lazy"
-        />
+<ul class="posts">
+  {posts.map((post) => (
+    <li class={`post type-${post.data.type}`}>
+      <img
+        src={post.data.image}
+        alt=""
+        class="thumb"
+        loading="lazy"
+      />
 
-        <div class="text">
+      <div class="text">
+        <div class="top">
+          <span class="label">
+            {post.data.label}
+          </span>
+
           <h2>
             <a href={`/blog/${post.slug}`}>
               {post.data.title}
             </a>
           </h2>
-
-          <p>{post.data.description}</p>
         </div>
-      </li>
-    ))}
-  </ul>
+
+        <p>{post.data.description}</p>
+      </div>
+    </li>
+  ))}
+</ul>
 </BaseLayout>
 
 <style>

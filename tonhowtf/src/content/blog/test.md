@@ -2,8 +2,8 @@
 title: "Tonho"
 description: "Tonho"
 date: 2026-07-02
-type: curso-gratis
-label: Curso
+type: livro-programacao
+label: Livro
 image: "/images/test.png"
 ---
 

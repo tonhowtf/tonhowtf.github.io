@@ -20,7 +20,7 @@ const posts = await getCollection("blog");
 
         <div class="text">
           <h2>
-            <a href={`/2026/${post.slug}`}>
+            <a href={`/blog/${post.slug}`}>
               {post.data.title}
             </a>
           </h2>
@@ -55,13 +55,22 @@ const posts = await getCollection("blog");
   object-fit: cover;
   flex-shrink: 0;
   background: var(--accent);
-
   filter: saturate(0.9) brightness(0.95);
 }
 
+/* texto */
 .text h2 {
   margin: 0;
   font-size: 1.05rem;
+}
+
+.text h2 a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.text h2 a:hover {
+  text-decoration: underline;
 }
 
 .text p {
@@ -70,6 +79,7 @@ const posts = await getCollection("blog");
   color: var(--text-muted);
 }
 
+/* cores por tipo */
 .type-curso-gratis        { --accent: #9adbcf; }
 .type-curso-pago          { --accent: #a8c5ff; }
 

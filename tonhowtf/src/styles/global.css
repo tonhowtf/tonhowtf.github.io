@@ -1,0 +1,99 @@
+:root {
+  --bg-main: #0e1013;
+  --bg-card: #14171c;
+
+  --text-main: #d6d7d9;
+  --text-muted: #9aa0a6;
+
+  --green-soft: #8fd6b3;
+  --purple-soft: #c3b7e2;
+  --blue-soft: #9bb8d3;
+  --yellow-soft: #e6d8a2;
+  --pink-soft: #e3b7c8;
+  --gray-soft: #a6a6a6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: monospace;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--green-soft);
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.card {
+  background: var(--bg-card);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+.tag {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  margin-right: 0.25rem;
+}
+
+.tag.curso.free {
+  background: rgba(143, 214, 179, 0.15);
+  color: var(--green-soft);
+}
+
+.tag.curso.paid {
+  background: rgba(195, 183, 226, 0.15);
+  color: var(--purple-soft);
+}
+
+.tag.livro.normal {
+  background: rgba(230, 216, 162, 0.15);
+  color: var(--yellow-soft);
+}
+
+.tag.livro.tech {
+  background: rgba(155, 184, 211, 0.15);
+  color: var(--blue-soft);
+}
+
+.tag.projeto {
+  background: linear-gradient(
+    135deg,
+    rgba(195, 183, 226, 0.15),
+    rgba(155, 184, 211, 0.15)
+  );
+  color: #cbbef0;
+}
+
+.tag.tutorial {
+  background: rgba(143, 214, 179, 0.12);
+  color: #9fe3c1;
+}
+
+.tag.bobajada {
+  background: rgba(166, 166, 166, 0.12);
+  color: var(--pink-soft);
+}
+
+.signature {
+  border-top: 1px dashed rgba(255,255,255,0.1);
+  padding: 0.75rem 0;
+  font-size: 0.9rem;
+}
+
+.signature-prefix {
+  color: var(--text-muted);
+}

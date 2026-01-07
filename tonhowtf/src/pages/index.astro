@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+---
+
+<BaseLayout title="tonho.wtf">
+  <h1>tonho.wtf</h1>
+
+  <ul class="posts">
+    {posts.map((post) => (
+      <li class={`post type-${post.data.type}`}>
+        <img
+          src={post.data.image}
+          alt=""
+          class="thumb"
+          loading="lazy"
+        />
+
+        <div class="text">
+          <h2>
+            <a href={`/2026/${post.slug}`}>
+              {post.data.title}
+            </a>
+          </h2>
+
+          <p>{post.data.description}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
+
+<style>
+.posts {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.post {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 1rem;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--accent);
+
+  filter: saturate(0.9) brightness(0.95);
+}
+
+.text h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.text p {
+  margin: .25rem 0 0;
+  font-size: .9rem;
+  color: var(--text-muted);
+}
+
+.type-curso-gratis        { --accent: #9adbcf; }
+.type-curso-pago          { --accent: #a8c5ff; }
+
+.type-livro               { --accent: #d6ccff; }
+.type-livro-programacao   { --accent: #b8a8ff; }
+
+.type-projeto             { --accent: #ffd6a5; }
+.type-tutorial            { --accent: #b5e8e0; }
+.type-bobajada            { --accent: #f2b5d4; }
+</style>

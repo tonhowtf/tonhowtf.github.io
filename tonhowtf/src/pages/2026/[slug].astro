@@ -1,0 +1,147 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { formatDate } from "../../utils/formatDate";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+
+const { Content } = await post.render();
+
+const allPosts = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+const index = allPosts.findIndex((p) => p.slug === post.slug);
+
+const previous = allPosts[index + 1];
+const next = allPosts[index - 1];
+---
+
+<BaseLayout title={post.data.title}>
+  <article class={`post type-${post.data.type}`}>
+  <a href="/" class="back">
+    ← home
+  </a>
+    <header class="header">
+      <img
+        src={post.data.image}
+        alt=""
+        class="thumb"
+        loading="lazy"
+      />
+
+      <div class="info">
+        <h1>{post.data.title}</h1>
+
+        <p class="meta">
+          {post.data.label} · {formatDate(post.data.date)}
+        </p>
+      </div>
+    </header>
+
+    <div class="content">
+      <Content />
+    </div>
+
+    <nav class="post-nav">
+      {previous && (
+        <a class="prev" href={`/blog/${previous.slug}`}>
+          ← {previous.data.title}
+        </a>
+      )}
+
+      {next && (
+        <a class="next" href={`/blog/${next.slug}`}>
+          {next.data.title} →
+        </a>
+      )}
+    </nav>
+  </article>
+</BaseLayout>
+
+<style>
+.post {
+  margin-top: 2rem;
+}
+
+.header {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.thumb {
+  width: 96px;
+  height: 96px;
+  border-radius: 1.25rem;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--accent);
+  filter: saturate(0.9) brightness(0.95);
+}
+
+
+.info h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--accent);
+}
+
+.meta {
+  margin-top: .25rem;
+  font-size: .9rem;
+  opacity: .6;
+}
+
+.content {
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.content p {
+  margin: 1.25rem 0;
+}
+
+.content h2 {
+  margin-top: 2.5rem;
+  margin-bottom: .75rem;
+  font-size: 1.25rem;
+}
+
+.post-nav {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: .95rem;
+}
+
+.post-nav a {
+  text-decoration: none;
+  color: var(--accent);
+  opacity: .8;
+}
+
+.post-nav a:hover {
+  opacity: 1;
+}
+
+.type-curso-gratis        { --accent: #9adbcf; }
+.type-curso-pago          { --accent: #a8c5ff; }
+
+.type-livro               { --accent: #d6ccff; }
+.type-livro-programacao   { --accent: #b8a8ff; }
+
+.type-projeto             { --accent: #ffd6a5; }
+.type-tutorial            { --accent: #b5e8e0; }
+.type-bobajada            { --accent: #f2b5d4; }
+</style>

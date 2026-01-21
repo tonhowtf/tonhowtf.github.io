@@ -1,7 +1,7 @@
 ---
 title: "Hostinger e configuração de um servidor de Minecraft do zero"
 description: "Primeiras impressões da Hostinger e como configurar um servidor Fabric em uma VPS"
-date: 2026-07-01
+date: 2026-01-07
 type: tutorial
 label: Tutorial
 image: images/minecraft01.png
